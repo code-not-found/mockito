@@ -10,15 +10,16 @@ import javax.faces.context.FacesContext;
 @SessionScoped
 public class SomeBean {
 
-    public void addMessage(Severity severity, String summary, String detail) {
-        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(severity, summary, detail));
-    }
+  public void addMessage(Severity severity, String summary,
+      String detail) {
+    FacesContext.getCurrentInstance().addMessage(null,
+        new FacesMessage(severity, summary, detail));
+  }
 
-    public String logout() {
-        FacesContext.getCurrentInstance().getExternalContext()
-                .invalidateSession();
+  public String logout() {
+    FacesContext.getCurrentInstance().getExternalContext()
+        .invalidateSession();
 
-        return "logout?faces-redirect=true";
-    }
+    return "logout?faces-redirect=true";
+  }
 }
